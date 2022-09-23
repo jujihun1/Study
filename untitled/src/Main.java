@@ -1,4 +1,3 @@
-import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
@@ -8,18 +7,52 @@ public class Main {
         /*
         * 주석 : 여러줄의 영역을 인식하지 못하게 해야할 경우에 사용
         */
-        System.out.println("Hello world!");
-        System.out.println("주지훈");
-        System.out.println("주지훈");
+        // ** 변수 : 값이 언제든지 변경 가능한 수.
+        // ** 상수 : 값의 변경이 불가능한 수
 
-        Scanner sc = new Scanner(System.in);
+        // ** lvalue  rvalue
+        // ** 함수
+        // ** 변수 선언 및 초기화
+        int number = 10;
+        int num = 100;
+        
+        // ** 출력 
+        System.out.println(number);
+        System.out.println(num);
+        
+        // ** 값 변경
+        number = 20;
+        num = 200;
+        
+        // ** 출력
+        System.out.println(number);
+        System.out.println(num);
 
-        int a = sc.nextInt(); // 더할 값
-        int sum = 0;
-        for(int i = 1; i < a; i++){
-            sum += i; // 입력한 a의 값만큼 i가 for문으로 돌면서  sum에 더해짐
-            System.out.println(sum);
-        }
+        int a = 'A';
+        System.out.println(a);
+
+        // ======================================================
+        // [자료형]
+        // ======================================================
+
+        /*
+        * 정수형 datatype
+        * char : 문자를 표현할때 사용. 2byte
+        *
+        * byte : 1 byte
+        * short : 2 byte
+        * int : 4 byte
+        * long : 8 byte
+        *
+        * 실수형 datatype
+        * float : 4 byte
+        * double : 8 byte
+        *
+        * 논리형 datatype
+        * boolean : 1 byte
+         */
+        
+
 
 
 
