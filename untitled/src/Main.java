@@ -51,6 +51,7 @@ public class Main {
         * 논리형 datatype
         * boolean : 1 byte
          */
+
         
 
 
