@@ -12,6 +12,7 @@ public class Main {
         System.out.println("주지훈");
         System.out.println("주지훈");
         System.out.println("주지훈");
+        System.out.println("주지훈");
 
         Scanner sc = new Scanner(System.in);
 
