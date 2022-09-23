@@ -1,3 +1,4 @@
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
@@ -51,8 +52,18 @@ public class Main {
         * 논리형 datatype
         * boolean : 1 byte
          */
+        Scanner sc = new Scanner(System.in);
 
-        
+        int A = sc.nextInt();
+        int B = sc.nextInt();
+        int C = sc.nextInt();
+
+        System.out.println((A + B) % C); // 5 + 8 / 4 > 나머지값 1
+        System.out.println((A % C) + (B % C) % C);  // 5 / 4 + 8 / 4 /4
+        System.out.println((A * B) % C);
+        System.out.println((A % C) * (B % C) % C);
+
+
 
 
 
