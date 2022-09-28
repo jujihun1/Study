@@ -51,7 +51,7 @@ public class Main {
         *
         * 논리형 datatype
         * boolean : 1 byte
-         */
+
         Scanner sc = new Scanner(System.in);
 
         int A = sc.nextInt();
@@ -63,6 +63,8 @@ public class Main {
         System.out.println((A * B) % C);
         System.out.println((A % C) * (B % C) % C);
 
+
+         */
 
 
             // =================================================
@@ -87,7 +89,7 @@ public class Main {
             // 2. double = 실수 값의 마지막에 d 붙혀준다.
             // * double = 실수 값의 마지막에 d가 없더라도 double 타입으로 판단.
             // =================================================
-
+        {
             float f = 3.141592653589793f;
 
             double d = 3.141592653589793d;
@@ -96,6 +98,7 @@ public class Main {
             System.out.println(f);
             System.out.println(d);
             System.out.println(d2);
+        }
 
 
             // =================================================
@@ -152,8 +155,30 @@ public class Main {
 
             System.out.println("Number1 : " + Number1);
             // System.out.println("Number2 : " + Number2);  Err
-                
 
+            //====================================================
+            // [형변환]
+            // 묵시적 : 자동 형변환
+            // 명시적 : 강제 형변환
+            //====================================================
+
+        // 묵시적 형변환
+        {
+            int j = 10;
+            long l = (long) j;
+
+            System.out.println(l);
+            System.out.println(i);
+        }
+        // 명시적 형변환
+        {
+            double d = 3.141592d;
+
+            int r = (int) d;
+
+
+            System.out.println(r);
+        }
 
 
     }
