@@ -62,7 +62,32 @@ public class Main {
 
         }
 
+        // ** [switch,case]
+        {
+            int num = 2;
 
+            // ** switch = 정수& 상수만 사용이 가능하다
+            // ** 변수이지만 final 키워드를 사용하여 상수로 만든 경우에는 사용 가능.
+            switch (num) {
+                case 0:
+                    System.out.println("0번");
+                    break; // 탈출문
+                case 1:
+                    System.out.println("1번");
+                    break;
+                case 2:
+                    System.out.println("2번");
+                    break;
+                case 3:
+                    System.out.println("3번");
+                    break;
+                default:
+                    System.out.println("4번");
+            }
+
+
+
+        }
 
 
     }
