@@ -90,8 +90,29 @@ public class Main {
 
             }
 
-        }  // for문 으로 짝수단수만 continue 로 만들기
+        }
 
+        {   // for문 으로 짝수단수만 continue 로 만들기
+            for (int i = 2; i <= 9; i++) {
+                for (int j = 1; j <= 9; j++){
+                    if ( i%2 != 0) continue;
+                    System.out.println(i + " * " + j + " = " + i * j);
+                }
+                System.out.println("\n");
+
+            }
+            // for문 으로 홀수단수만 continue 로 만들기
+
+            for(int i = 2; i < 10; i++){
+                for(int j = 1; j < 10; j++){
+                    if(i % 2 == 0) continue;
+                    System.out.println(i + " * " + j + " = " + i * j);
+                }
+                System.out.println("\n");
+            }
+
+
+        }
 
 
     }
