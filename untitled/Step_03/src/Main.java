@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
         // =======================================
@@ -93,14 +95,23 @@ public class Main {
         }
 
         {   // for문 으로 짝수단수만 continue 로 만들기
-            for (int i = 2; i <= 9; i++) {
+            Scanner sc = new Scanner(System.in);
+            int number = sc.nextInt();
+
+
                 for (int j = 1; j <= 9; j++){
-                    if ( i%2 != 0) continue;
-                    System.out.println(i + " * " + j + " = " + i * j);
+                    if (number < 2) {
+                    }else if(number < 9) {
+
+                    } else {
+                        //( i%2 != 0) continue;
+                        System.out.println(number + " * " + j + " = " + number * j);
+                    }
+
                 }
                 System.out.println("\n");
 
-            }
+
             // for문 으로 홀수단수만 continue 로 만들기
 
             for(int i = 2; i < 10; i++){
