@@ -101,7 +101,7 @@ public class Main {
 
                 for (int j = 1; j <= 9; j++){
                     if (number < 2) {
-                    }else if(number < 9) {
+                    }else if(number > 9) {
 
                     } else {
                         //( i%2 != 0) continue;
@@ -112,15 +112,15 @@ public class Main {
                 System.out.println("\n");
 
 
-            // for문 으로 홀수단수만 continue 로 만들기
-
-            for(int i = 2; i < 10; i++){
-                for(int j = 1; j < 10; j++){
-                    if(i % 2 == 0) continue;
-                    System.out.println(i + " * " + j + " = " + i * j);
-                }
-                System.out.println("\n");
-            }
+//            // for문 으로 홀수단수만 continue 로 만들기
+//
+//            for(int i = 2; i < 10; i++){
+//                for(int j = 1; j < 10; j++){
+//                    if(i % 2 == 0) continue;
+//                    System.out.println(i + " * " + j + " = " + i * j);
+//                }
+//                System.out.println("\n");
+//            }
 
 
         }
