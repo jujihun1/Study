@@ -71,6 +71,50 @@ public class Main {
 
         }
 
+        {
+            int[] numbers = new int[6];
+
+            int index = 0;
+            while (true) {
+                // ** 1 ~ 45 사이의 난수를 생성
+                int num = (int)(Math.random() * 45) + 1;
+
+                // ** true || false
+                boolean insert = true;
+
+                // ** 리스트에 같은 값이 있는지 확인
+                for (int i = 0; i <= index; ++i){
+                    // ** 만약 같은 값이 존재 한다면..
+                    if(numbers[index] == num) {
+                        // ** 데이터를 넣지 못하게 함
+                        insert = false;
+                        break;
+                    }
+                }
+                // ** 같은 값이 없을때..
+                if(insert == true){
+                    // ** 리스트에 값을 추가한다
+                    numbers[index] = num;
+                    // ** 인덱스를 증가 시킨다
+                    ++index;
+                }
+                // ** 리스트가 모두 완성되었다면 반복문을 탈출한다
+                if (index == 6){
+                    break;
+
+                }
+                // ** 로또번호 출력
+                for (int i = 0; i < numbers.length; i++){
+                    System.out.println(numbers[i]);
+                }
+
+
+
+
+            }
+
+        }
+
 
 
     }
