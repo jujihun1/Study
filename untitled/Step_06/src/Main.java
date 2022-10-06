@@ -1,7 +1,7 @@
 
 
 // ** public : 공개된 상태
-// **
+// ** protected : 상속관계일 때 public, 아닐 때에는 private
 // ** private : 비공개 상태
 
 
