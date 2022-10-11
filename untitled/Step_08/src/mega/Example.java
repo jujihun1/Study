@@ -8,9 +8,9 @@ import mega.example.test.MegaExample;
 //protected
 public class Example {
 
-    private getinstance(){
-
-    }
+//    private getinstance(){
+//
+//    }
 
 
     MegaExample megaExample;
