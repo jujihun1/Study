@@ -7,7 +7,7 @@ public class Parent {
       String str2;
       String str3;
 
-      String name;
+      
 
       Parent(){
           System.out.println("Parent 생성");
