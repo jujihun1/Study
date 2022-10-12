@@ -8,8 +8,12 @@ import mega.example.test.MegaExample;
 //protected
 public class Example {
 
-//    private getinstance(){
+//    private  static setinstace(){
+//        this.
+//    }
 //
+//    private static getinstance(){
+//        return;
 //    }
 
 

@@ -3,9 +3,9 @@ package mega.example.test;
 public class Singleton {
     private  static  Singleton instance = new Singleton();
 
-    public Singleton(){
-        return ;
-
+    private Singleton() {
+        
+    }
 //        Singleton s1 = new Singleton();
 //        Singleton s2 = new Singleton();;
 //        Singleton s3 = new Singleton();;
@@ -16,6 +16,6 @@ public class Singleton {
 //        Singleton s3 = Singleton.instance();
 
 
-    };
+
 
 }
