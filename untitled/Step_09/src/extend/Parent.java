@@ -18,15 +18,15 @@ public class Parent {
           return name;
       }
 
-    void renderHong(){
-        System.out.println(str1);
+    void render(){
+        System.out.println(name);
     }
 
-    void renderLim(){
-        System.out.println(str2);
+    void  render(String str){
+        System.out.println("입력한 " + str + "이고," + name +  "입니다.");
     }
 
-    void  renderLee(){
-        System.out.println(str3);
+    void  render(String str, int num){
+        System.out.println("입력한값은 " + str + " 이고 " +  num + " 문자열 입니다.");
     }
 }
