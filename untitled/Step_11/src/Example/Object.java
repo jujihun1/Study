@@ -1,16 +1,27 @@
 package Example;
 
-public class Object {
+public class Object implements ParentB {
 
-    int index;
-    int age;
-    String name;
-    String _class;
 
-    public void render(){
+
+    //    String name;
+//
+//
+//    Object(String name) {
+//        this.name = name;
+//    };
+//
+//    abstract public void render();
+
+    @Override
+    public void parentA() {
 
     }
 
+    @Override
+    public void parentB(){
+
+    }
 
 
 
