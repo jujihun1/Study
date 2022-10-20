@@ -6,6 +6,9 @@ public class Member extends Parent{
 
     Group group;
 
+    public Group getGroup() { return group; }
+    public void setGroup(Group group) { this.group = group; }
+
     public int getAge() {
         return age;
     }
