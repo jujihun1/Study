@@ -25,7 +25,7 @@ public class MemberController {
     public String createMember(){
         Member member = new Member("홍길동");
         memberRepository.save(member); // save ?
-        return "";
+        return "/create";
     }
 
 
