@@ -23,7 +23,9 @@ public class MemberController {
 //    @GetMapping("create") // get 방식은 참조만 가능
     @PostMapping("create") // post 변경가능
     public String createMember(){
-        Member member = new Member("홍길동");
+        Member member = new Member("홍길동",30 ,"name@gmail.com");
+        // ** 나이
+        // ** 이메일
         memberRepository.save(member); // save ?
         return "/create";
     }

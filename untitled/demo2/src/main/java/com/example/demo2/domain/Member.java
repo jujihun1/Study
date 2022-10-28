@@ -19,8 +19,26 @@ public class Member {
     @Column(name = "NAME")
     private  String userName;
 
+    @Column(name = "AGE")
+    private  Integer age;
+
+    @Column(name = "EMAIL")
+    private  String email;
+
+//    @Column(age = "AGE")
+//    private Long userAge;
+//
+//    @Column(email ="EMAIL")
+//    private String userEmail;
+
     public Member(String userName){
         this.userName = userName;
+    }
+    public Member(String userName, Integer userAge, String userEmail){
+        this.userName = userName;
+        this.age = userAge;
+        this.email = userEmail;
+
     }
 
 }
