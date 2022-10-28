@@ -14,19 +14,17 @@ public class MemberController {
     @Autowired
     private MemberRepository memberRepository;
 
-    @GetMapping("new")
+    @GetMapping("new") // 링크이름
     public String newMember(){
-        return "new";
+
+        return "new"; // html 이름
     }
 
 //    @GetMapping("create") // get 방식은 참조만 가능
     @PostMapping("create") // post 변경가능
     public String createMember(){
-
         Member member = new Member("홍길동");
         memberRepository.save(member); // save ?
-
-        System.out.println("createMember");
         return "";
     }
 
