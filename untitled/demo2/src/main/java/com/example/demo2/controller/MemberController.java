@@ -1,7 +1,6 @@
 package com.example.demo2.controller;
 
 import com.example.demo2.domain.Member;
-import com.example.demo2.repository.MemberRepository;
 import com.example.demo2.service.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -12,7 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 public class MemberController {
 
     @Autowired
-    private MemberRepository memberRepository;
+    private MemberService memberService;
 
     @GetMapping("new") // 링크이름
     public String newMember(){
@@ -22,11 +21,9 @@ public class MemberController {
 
 //    @GetMapping("create") // get 방식은 참조만 가능
     @PostMapping("create") // post 변경가능
-    public String createMember(){
-        Member member = new Member("홍길동",30 ,"name@gmail.com");
-        // ** 나이
-        // ** 이메일
-        memberRepository.save(member); // save ?
+    public String createMember(Member member){
+
+        memberService.insertMember(member);
         return "/create";
     }
 

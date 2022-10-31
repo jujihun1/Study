@@ -17,28 +17,40 @@ public class Member {
     private Long id;
 
     @Column(name = "NAME")
-    private  String userName;
+    private  String username;
 
-    @Column(name = "AGE")
-    private  Integer age;
+    public Member(String username){
+        this.username = username;
+    }
 
-    @Column(name = "EMAIL")
-    private  String email;
-
-//    @Column(age = "AGE")
-//    private Long userAge;
+//    @Column(name = "AGE")
+//    private  Integer age;
 //
-//    @Column(email ="EMAIL")
-//    private String userEmail;
-
-    public Member(String userName){
-        this.userName = userName;
-    }
-    public Member(String userName, Integer userAge, String userEmail){
-        this.userName = userName;
-        this.age = userAge;
-        this.email = userEmail;
-
-    }
+//    @Column(name = "EMAIL")
+//    private  String email;
+//        //Column name =
+////    @Column(age = "AGE")
+////    private Long userAge;
+////
+////    @Column(email ="EMAIL")
+////    private String userEmail;
+//
+//
+//    public Member(String userName, Integer userAge, String userEmail){
+//        this.userName = userName;
+//        this.age = userAge;
+//        this.email = userEmail;
+//
+//    }
 
 }
+
+// ** [영속성]
+
+// ** 영속 : EntityManager 에 포함된 상태
+// ** 비 영속 : EntityManager 에 포함되기전 상태
+// ** 준 영속 : EntityManager 에 포함되었 었고, 현재는 포함되지 않은 상태
+// ** 삭제 : 삭제된 상태
+
+
+
