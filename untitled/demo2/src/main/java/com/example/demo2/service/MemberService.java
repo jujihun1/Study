@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 
-@Transactional
+@Transactional  // 변경사항 확인
 @Service
 public class MemberService {
 
