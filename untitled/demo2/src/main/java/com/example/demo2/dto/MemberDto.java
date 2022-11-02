@@ -9,6 +9,8 @@ import lombok.Setter;
 @Getter @Setter
 @NoArgsConstructor
 public class MemberDto {
+    
+    // Member == Entity   Dto가 Member 역할을 수행
 
     @NonNull
     private String username;

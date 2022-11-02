@@ -11,6 +11,8 @@ import java.util.List;
 
 @Repository                                           // Entity , ID
 public class MemberRepository {
+    // 상품정보 // 아이템
+    
 
     @PersistenceContext
     private EntityManager em;
