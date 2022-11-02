@@ -17,7 +17,7 @@ public class MemberController {
 
     @Autowired
     private MemberService memberService;
-
+    // view 기능
     //    @GetMapping("create") // get 방식은 참조만 가능
     // ==================================================
     // ** 생성
@@ -34,18 +34,18 @@ public class MemberController {
         return "redirect:/";
     }
     // ==================================================
-    @GetMapping("find")
-    public String find(Model model){
-        model.addAttribute("object" , new MemberDto());
-        return "findAll";
-    }
+//    @GetMapping("find")
+//    public String find(Model model){
+//        model.addAttribute("object" , new MemberDto());
+//        return "findAll";
+//    }
 
-    @GetMapping("findAll")
+    @GetMapping("findAll") // 링크이름
     public String findAll(Model model){
 
         List<Member> members = memberService.findAll();
         model.addAttribute("object", members);
-        return "findAll";
+        return "findAll"; // html 이름
     }
 
 }

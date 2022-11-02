@@ -13,7 +13,7 @@ import java.util.List;
 @Transactional  // 변경사항 확인
 @Service
 public class MemberService {
-
+    // 요청사항 기능적인 부분
     @Autowired
     private MemberRepository memberRepository;
 
