@@ -1,6 +1,7 @@
 package com.example.demo2.dto;
 
-import com.example.demo2.domain.Member;
+
+
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.NonNull;

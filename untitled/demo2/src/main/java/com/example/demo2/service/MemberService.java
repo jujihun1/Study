@@ -3,6 +3,7 @@ package com.example.demo2.service;
 import com.example.demo2.domain.Member;
 import com.example.demo2.dto.MemberDto;
 import com.example.demo2.repository.MemberRepository;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -26,6 +27,15 @@ public class MemberService {
         return memberRepository.findAll();
     }
 
+    public List<Member> findName(MemberDto dto){
+        return memberRepository.findName(dto.getUsername());
+
+    }
 
 
+    public void deleteMember(String username) {
+
+        memberRepository.deleteMember(username);
+
+    }
 }

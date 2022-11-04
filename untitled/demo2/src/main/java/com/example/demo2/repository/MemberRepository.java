@@ -1,6 +1,7 @@
 package com.example.demo2.repository;
 
 import com.example.demo2.domain.Member;
+
 import com.example.demo2.dto.MemberDto;
 import org.springframework.stereotype.Repository;
 
@@ -28,5 +29,17 @@ public class MemberRepository {
               .getResultList();
     }
 
+    public List<Member> findName(String username) {
+        return em.createQuery("select m from Member m where m.username = :name", Member.class)
+                .setParameter("name", username)
+                .getResultList();     // setParameter ("name" == m.username 를 의미)
+    }
 
+    public void deleteMember(String username) {
+        List<Member> members = findName(username);
+
+        for(int i = 0; i < members.size(); i++){
+            em.remove(members.get(i));
+        }
+    }
 }
