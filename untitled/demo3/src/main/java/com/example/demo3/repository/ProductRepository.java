@@ -1,9 +1,10 @@
 package com.example.demo3.repository;
 
 import com.example.demo3.domain.ImageObject;
+import com.example.demo3.dto.ProductDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
-import org.springframework.web.multipart.MultipartFile;
+
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -20,6 +21,8 @@ public class ProductRepository {
         em.persist(product);
 
     }
+
+
 
 
 }

@@ -1,7 +1,7 @@
 package com.example.demo3.controller;
 
+import com.example.demo3.dto.ProductDto;
 import com.example.demo3.service.ProductService;
-import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -28,6 +28,16 @@ public class ProductController {
     public String addImage(MultipartFile file) throws Exception {
         productService.save(file);
         return "redirect:/";
+        
+
+    @PostMapping("addProduct")
+    public String addprice(ProductDto dto) throws Exception {
+        productService.save(dto);
+        return "redirect:/";
+
+
+
+
 
     }
 

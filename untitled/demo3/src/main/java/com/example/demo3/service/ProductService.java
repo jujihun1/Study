@@ -2,6 +2,7 @@ package com.example.demo3.service;
 
 
 import com.example.demo3.domain.ImageObject;
+import com.example.demo3.dto.ProductDto;
 import com.example.demo3.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,7 +21,7 @@ public class ProductService {
     private ProductRepository productRepository;
 
     @Transactional
-    public void save(MultipartFile file) throws Exception {
+    public void save(MultipartFile file, ProductDto dto) throws Exception {
 
 
         String filePath = System.getProperty("user.dir") // 프로젝트의 주소를 나타냄
@@ -29,10 +30,18 @@ public class ProductService {
         UUID uuid = UUID.randomUUID();
         String fileName = uuid + "_" + file.getOriginalFilename();
 
-        File saved = new File(filePath, fileName);
+        File saved = new File(filePath,fileName);
         file.transferTo(saved);
 
-        ImageObject product = new ImageObject(filePath, fileName);
+
+
+        ImageObject product = new ImageObject(
+                filePath,
+                fileName,
+                content,
+                title,
+                count,
+                price);
         productRepository.save(product);
 
     }
