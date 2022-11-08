@@ -25,15 +25,15 @@ public class ProductController {
     }
 
     @PostMapping("addProduct")
-    public String addImage(MultipartFile file) throws Exception {
-        productService.save(file);
+    public String addImage(MultipartFile file, ProductDto dto) throws Exception {
+        productService.save(file,dto);
         return "redirect:/";
         
 
-    @PostMapping("addProduct")
-    public String addprice(ProductDto dto) throws Exception {
-        productService.save(dto);
-        return "redirect:/";
+//    @PostMapping("addProduct")
+//    public String addprice(ProductDto dto) throws Exception {
+//        productService.save(dto);
+//        return "redirect:/";
 
 
 

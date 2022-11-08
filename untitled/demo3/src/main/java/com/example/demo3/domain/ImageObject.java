@@ -29,7 +29,9 @@ public class ImageObject {
     @Column(name = "FILEPATH")
     private String filePath;
 
+    @Column(name = "COUNT")
     private int count; // 가격 SQL은 int >> Long 로 인식
+    @Column(name = "PRICE")
     private int price;
 
 

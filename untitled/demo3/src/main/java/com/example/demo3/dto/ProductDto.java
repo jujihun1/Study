@@ -19,10 +19,7 @@ public class ProductDto {
     private int price;
 
 
-    public ProductDto(String content,
-                      String title,
-                      int count,
-                      int price){
+    public ProductDto(String content, String title, int count, int price){
         this.content = content;
         this.title = title;
         this.count = count ;
