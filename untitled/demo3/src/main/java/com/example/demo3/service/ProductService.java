@@ -4,6 +4,7 @@ package com.example.demo3.service;
 import com.example.demo3.domain.ImageObject;
 import com.example.demo3.dto.ProductDto;
 import com.example.demo3.repository.ProductRepository;
+import org.aspectj.weaver.ast.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -14,7 +15,7 @@ import java.util.UUID;
 
 @Transactional(readOnly = true) // 읽기전용
 @Service
-public class ProductService {
+public class ProductService { // 비지니스 로직 (기능에따라 바뀜)
 
 
     @Autowired
@@ -36,15 +37,18 @@ public class ProductService {
 
 
         ImageObject product = new ImageObject(
-                filePath,
+                dto.getContent(),
+                dto.getTitle(),
+                dto.getCount(),
+                dto.getPrice(),
                 fileName,
-                content,
-                title,
-                count,
-                price);
+                filePath);
+
         productRepository.save(product);
 
     }
+
+
 
 
 

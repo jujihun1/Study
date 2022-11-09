@@ -24,16 +24,13 @@ public class ProductController {
 
     }
 
-    @PostMapping("addProduct")
-    public String addImage(MultipartFile file, ProductDto dto) throws Exception {
+    @PostMapping("addProduct") // ProductService 클래스 안 save 메소드 객체값을 같이 넣어줘야함
+    public String addImage(MultipartFile file, ProductDto dto) throws Exception { 
         productService.save(file,dto);
         return "redirect:/";
         
 
-//    @PostMapping("addProduct")
-//    public String addprice(ProductDto dto) throws Exception {
-//        productService.save(dto);
-//        return "redirect:/";
+
 
 
 

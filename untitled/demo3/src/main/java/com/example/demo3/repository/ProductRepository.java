@@ -11,7 +11,7 @@ import javax.persistence.PersistenceContext;
 
 @RequiredArgsConstructor // final 이 붙어있거나 @Notnull 이 붙어 있는 필드값에 생성자를 자동으로 생성한다
 @Repository
-public class ProductRepository {
+public class ProductRepository { // ProductRepository == CRUD 기능 (JPQL)
 
     @PersistenceContext
     private EntityManager em;
