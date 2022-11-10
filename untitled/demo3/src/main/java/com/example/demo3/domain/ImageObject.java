@@ -36,6 +36,7 @@ public class ImageObject { //Entity 필드값은 컬럼으로 생성됨
     private int price;
 
 
+
     // method 안의 객체와 필드값이 같게 만들어야함 .
     public ImageObject(String content,
                        String title,
