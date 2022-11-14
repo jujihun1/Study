@@ -15,18 +15,18 @@ public class ObjectB {
     }
 
 
-    public ObjectB(){  }
-
-    public ObjectB(String name){
-        this.name = name;
-    }
-
-
     public ObjectA getNodeA(){
         if (nodeA == null){
             nodeA = new ObjectA("A");
         }
         return nodeA;
+    }
+
+    public ObjectB(){  }
+
+
+    public ObjectB(String name){
+        this.name = name;
     }
 
 
