@@ -2,18 +2,18 @@ package testcase;
 
 public class ObjectB {
 
+    public String id;
     private String name;
     private int age;
 
-
-
-    public ObjectB() {  }
-
-
-    public ObjectB(String name, int age) {
-        this.name = name;
-        this.age = age;
+    public String getId() {
+        return id;
     }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
 
     public String getName() {
         return name;
@@ -31,16 +31,11 @@ public class ObjectB {
         this.age = age;
     }
 
-    private ObjectA objectA;
+    public ObjectB() {  }
 
-    public ObjectA getObjectA() {
-        return objectA;
+    public ObjectB(String id,String name, int age) {
+        this.id = id;
+        this.name = name;
+        this.age = age;
     }
-
-    public void setObjectA(ObjectA objectA) {
-        this.objectA = objectA;
-    }
-
-
-
 }
