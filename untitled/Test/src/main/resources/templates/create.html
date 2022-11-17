@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="kr" xmlns:th="http://www.thymleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>생성페이지</title>
+</head>
+<body>
+    <form action="create" method="post" th:object="${object}">
+        <input type="text" placeholder="이름입력" name="memberName">
+            <button type="submit">이름 생성</button>
+        <input type="text" placeholder="학원이름" name="academyName">
+            <button type="submit">학원 생성</button>
+
+    </form>
+</body>
+</html>

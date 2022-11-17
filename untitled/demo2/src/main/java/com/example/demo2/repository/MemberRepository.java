@@ -2,7 +2,6 @@ package com.example.demo2.repository;
 
 import com.example.demo2.domain.Member;
 
-import com.example.demo2.dto.MemberDto;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;

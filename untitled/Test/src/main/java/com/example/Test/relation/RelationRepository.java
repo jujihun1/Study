@@ -12,6 +12,13 @@ public class RelationRepository {
     @PersistenceContext
     EntityManager em;
 
+    public void insertMember(Member member,Academy academy){
+        em.persist(member);
+        em.persist(academy);
+    }
+
+
+
 
 
 

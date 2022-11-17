@@ -23,8 +23,7 @@ public class Member {
     @ManyToOne// 외래키 다른테이블에 있는 PK 를 연결시켜줌
     private Academy academy;
 
-    public Member(String memberName, Academy academy) {
+    public Member(String memberName) {
         this.memberName = memberName;
-        this.academy = academy;
     }
 }
