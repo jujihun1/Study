@@ -2,11 +2,14 @@
 <html lang="kr" xmlns:th="http://www.thymleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Welcome page</title>
+    <title>생성페이지</title>
 </head>
 <body>
- <h2>Welcome</h2>
+<form action="create" method="post" th:object="${object}">
+    <input type="text" placeholder="이름입력" name="memberName">
+    <input type="text" placeholder="학원이름" name="academyName">
+    <button type="submit">생성</button>
 
-<a href="/create"> 생성 </a>
+</form>
 </body>
 </html>

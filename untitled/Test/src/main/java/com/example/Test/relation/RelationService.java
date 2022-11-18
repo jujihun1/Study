@@ -15,8 +15,9 @@ public class RelationService {
 
 
     public void insertMember(RelationDto dto){
-        relationRepository.insertMember(new Member(dto.getMemberName()),
-                new Academy(dto.getAcademyName()));
+        Academy academy = new Academy(dto.getAcademyName());
+        relationRepository.insertMember(new Member(dto.getMemberName(),academy));
+        relationRepository.insertAcademy(academy);
     }
 //    Academy academy = new Academy("메가스터디컴퓨터학원");
 //    Academy academy1 = new Academy("서면스터디컴퓨터학원");
