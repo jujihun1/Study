@@ -21,13 +21,13 @@ public class Academy {
     @Column(name = "academyName")
     private String academyName;
 
-    @OneToMany(mappedBy = "academy")
-    private List<Member> members = new ArrayList<>();
-
-    public void addMember(Member member){
-        members.add(member);
-
-    }
+//    @OneToMany(mappedBy = "academy")
+//    private List<Member> members = new ArrayList<>();
+//
+//    public void addMember(Member member){
+//        members.add(member);
+//
+//    }
 
     public Academy(String academyName) {  // 생성자   @NoArgsConstructor 으로 인해 일반생성자 xx
         this.academyName = academyName;
