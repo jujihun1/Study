@@ -1,17 +1,19 @@
 package com.example.Test.relation;
 
 
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+@RequiredArgsConstructor // final 을 찾아 생성
 @Transactional
 @Service
 public class RelationService {
 
 
-    @Autowired
-    RelationRepository relationRepository;
+//    @Autowired
+    private final RelationRepository relationRepository;
 
 
     public void insertMember(RelationDto dto){

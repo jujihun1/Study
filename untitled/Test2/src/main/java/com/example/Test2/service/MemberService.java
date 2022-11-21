@@ -26,5 +26,12 @@ public class MemberService { // 기능부분
                 ,product,aOrder);
     }
 
+//    public void find(MemberDto dto){
+//        Product product = new Product(dto.getProductName());
+//        AOrder aOrder = new AOrder(dto.getOrderName());
+//        return memberRepository.insert(new Member(dto.getMemberName(),product,aOrder),
+//                product,aOrder);
+//    }
+
 
 }

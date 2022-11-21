@@ -1,21 +1,25 @@
 package com.example.Test.relation;
 
 import lombok.Getter;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
-
+@RequestMapping("/members") // 링크 앞에 members 가 붙음 그룹 관리편의
+@RequiredArgsConstructor // final 을 찾아 생성
 @Controller
 public class RelationController {
 
-    @Autowired
-    RelationService relationService;
+//    @Autowired
+    private final RelationService relationService;
 
     @PostMapping("create")
     public String insertMember(RelationDto dto){
@@ -23,10 +27,14 @@ public class RelationController {
         return "redirect:/";
     }
 
-    @GetMapping("create")
+
+    @GetMapping("create") // @ModelAttribute"form"  여기서 form 은 dto 를 newMemberForm 에 이렇게 호출하겟다는뜻
     public String createMember(){
         return "create";
-    }
+    } // "members/newMemberForm"    // members : templates 에  members 폴더
+
+
+
 //    @GetMapping("main")
 //    public String insertMember(RelationDto dto){
 //
