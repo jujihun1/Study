@@ -21,6 +21,7 @@ public class MemberDto {
     @NotEmpty
     private String password;
 
-
+    @NotEmpty
+    private String academyName;
 
 }

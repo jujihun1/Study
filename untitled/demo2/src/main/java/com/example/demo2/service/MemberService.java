@@ -34,7 +34,6 @@ public class MemberService {
 
 
     public void deleteMember(String username) {
-
         memberRepository.deleteMember(username);
 
     }
