@@ -17,9 +17,7 @@ public class MemberRepository {
         em.persist(member);
     }
 
-    public Member findById(Long id) {
-        return em.find(Member.class, id);
-    }
+
 
     public List<Member> findByName(String academyName) { // select table(m) from (Entity 이름) m join (Member 필드에 academy) a where a.academyName = :name
         return em.createQuery("select m from Member m join m.academy a where a.academyName = :name", Member.class)

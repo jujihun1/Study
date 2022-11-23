@@ -36,16 +36,15 @@ public class RelationController {
         Academy academy = new Academy(dto.getAcademyName());
 
 //        memberService.insert(new Member(dto.getLoginId(), dto.getMemberName(), dto.getPassword(), academy));
-        List<Member> members = memberService.findByName(dto.getAcademyName());
+        List<Member> members = memberService.findByName(dto.getLoginId());
 
-
+        System.out.println(members);
 
         // List<Academy> all 아무것도 없음.
 
 
-        for (Member element: all) {
+        for (Member element: members) {
             if (element.getLoginId().equals(dto.getLoginId())){
-                Member member = memberRepository.findById(element.getId());
                 memberService.insert(new Member(dto.getLoginId(), dto.getMemberName(), dto.getPassword(), academy));
             } else {
                 memberService.insert(new Member(dto.getLoginId(), dto.getMemberName(), dto.getPassword(), academy));
