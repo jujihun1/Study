@@ -3,6 +3,7 @@ package com.example.demo.relation.view.member;
 import com.example.demo.relation.domain.academy.Academy;
 import com.example.demo.relation.domain.academy.AcademyRepository;
 import com.example.demo.relation.domain.member.Member;
+import com.example.demo.relation.domain.member.MemberRepository;
 import com.example.demo.relation.domain.service.MemberService;
 import com.example.demo.relation.view.member.dto.MemberDto;
 import lombok.RequiredArgsConstructor;
@@ -20,8 +21,10 @@ import java.util.List;
 @Controller
 public class RelationController {
     private final MemberService memberService;
+
     private final AcademyRepository academyRepository;
 
+    private final MemberRepository memberRepository;
     @GetMapping("/new")
     public String insert(@ModelAttribute("form") MemberDto dto) {
         return "members/newMemberForm";
@@ -30,23 +33,38 @@ public class RelationController {
     @PostMapping("/new")
     public String save(@Valid @ModelAttribute("form") MemberDto dto) {
 
-        List<Academy> all = academyRepository.findAll();
-        System.out.println(all.size());
+        Academy academy = new Academy(dto.getAcademyName());
+
+//        memberService.insert(new Member(dto.getLoginId(), dto.getMemberName(), dto.getPassword(), academy));
+        List<Member> members = memberService.findByName(dto.getAcademyName());
+
 
 
         // List<Academy> all 아무것도 없음.
-        for (Academy element : all) {
-            if(element.getAcademyName().equals(dto.getAcademyName())) {
-                Academy academy = academyRepository.findById(element.getId());
-                memberService.insert(
-                        new Member( dto.getMemberName(), academy));
+
+
+        for (Member element: all) {
+            if (element.getLoginId().equals(dto.getLoginId())){
+                Member member = memberRepository.findById(element.getId());
+                memberService.insert(new Member(dto.getLoginId(), dto.getMemberName(), dto.getPassword(), academy));
+            } else {
+                memberService.insert(new Member(dto.getLoginId(), dto.getMemberName(), dto.getPassword(), academy));
             }
-            else
-            {
-                Academy academy = new Academy(dto.getAcademyName());
-                memberService.insert(
-                        new Member( dto.getMemberName(), academy));
-            }
+
+
+//         List<Academy> all 아무것도 없음.
+//        for (Academy element : all) {
+//            if(element.getAcademyName().equals(dto.getAcademyName())) {
+//                Academy academy = academyRepository.findById(element.getId());
+//                memberService.insert(
+//                        new Member(dto.getLoginId(), dto.getMemberName(), dto.getPassword(), academy));
+//            }
+//            else
+//            {
+//                Academy academy = new Academy(dto.getAcademyName());
+//                memberService.insert(
+//                        new Member(dto.getLoginId(), dto.getMemberName(), dto.getPassword(), academy));
+//            }
         }
 
         return "redirect:/";

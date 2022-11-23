@@ -2,10 +2,11 @@ package com.example.demo.relation.domain.service;
 
 import com.example.demo.relation.domain.member.Member;
 import com.example.demo.relation.domain.member.MemberRepository;
-import com.example.demo.relation.domain.repository.OrderRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
 
 
 @RequiredArgsConstructor
@@ -19,4 +20,9 @@ public class MemberService {
     {
         memberRepository.save(member);
     }
+
+    public List<Member> findByName(String academyName){
+        return memberRepository.findByName(academyName);
+    }
+
 }

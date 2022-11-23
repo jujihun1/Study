@@ -1,9 +1,11 @@
 package com.example.demo.relation.domain.member;
 
+import com.example.demo.relation.domain.academy.Academy;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import java.util.List;
 
 @Repository
 public class MemberRepository {
@@ -14,4 +16,15 @@ public class MemberRepository {
     public void save(Member member) {
         em.persist(member);
     }
+
+    public Member findById(Long id) {
+        return em.find(Member.class, id);
+    }
+
+    public List<Member> findByName(String academyName) { // select table(m) from (Entity 이름) m join (Member 필드에 academy) a where a.academyName = :name
+        return em.createQuery("select m from Member m join m.academy a where a.academyName = :name", Member.class)
+                .setParameter("name", academyName)
+                .getResultList();
+    }
+
 }
