@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 @RequiredArgsConstructor // final 을 찾아 생성
-@Transactional
+@Transactional(readOnly = true) // class 전체를 읽기 정용으로 사용하겠다
 @Service
 public class RelationService {
 
@@ -15,7 +15,7 @@ public class RelationService {
 //    @Autowired
     private final RelationRepository relationRepository;
 
-
+    @Transactional // 이 메서드만 변경사항을 확인하겠다 .
     public void insertMember(RelationDto dto){
         Academy academy = new Academy(dto.getAcademyName());
         relationRepository.insertMember(new Member(dto.getMemberName(),academy));

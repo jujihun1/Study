@@ -1,6 +1,10 @@
 package com.example.demo.relation.domain.member;
 
 
+// ** JPQL 에 관하여
+// 람다식 에 관하여
+// ** jsbin.com
+
 import com.example.demo.relation.domain.academy.Academy;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

@@ -33,22 +33,29 @@ public class RelationController {
     @PostMapping("/new")
     public String save(@Valid @ModelAttribute("form") MemberDto dto) {
 
-        Academy academy = new Academy(dto.getAcademyName());
-
-//        memberService.insert(new Member(dto.getLoginId(), dto.getMemberName(), dto.getPassword(), academy));
-        List<Member> members = memberService.findByName(dto.getLoginId());
-
-        System.out.println(members);
-
-        // List<Academy> all 아무것도 없음.
 
 
-        for (Member element: members) {
-            if (element.getLoginId().equals(dto.getLoginId())){
-                memberService.insert(new Member(dto.getLoginId(), dto.getMemberName(), dto.getPassword(), academy));
-            } else {
-                memberService.insert(new Member(dto.getLoginId(), dto.getMemberName(), dto.getPassword(), academy));
-            }
+
+        List<Academy> academies = academyRepository.findByName(dto.getAcademyName());
+
+        Academy academy = null;
+
+        if (!academies.isEmpty()){
+            academy = academies.get(0);
+        } else {
+            academy = new Academy(dto.getAcademyName());
+            memberService.insert(
+                    new Member(dto.getLoginId(),
+                            dto.getMemberName(),
+                            dto.getPassword(),
+                            academy));
+        }
+
+//        for (Member element: members) {
+//            if (element.getLoginId().equals(dto.getLoginId())){
+//            } else {
+//                memberService.insert(new Member(dto.getLoginId(), dto.getMemberName(), dto.getPassword(), academy));
+//            }
 
 
 //         List<Academy> all 아무것도 없음.
@@ -64,7 +71,7 @@ public class RelationController {
 //                memberService.insert(
 //                        new Member(dto.getLoginId(), dto.getMemberName(), dto.getPassword(), academy));
 //            }
-        }
+//        }
 
         return "redirect:/";
     }

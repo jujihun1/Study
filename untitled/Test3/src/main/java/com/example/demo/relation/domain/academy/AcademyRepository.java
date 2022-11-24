@@ -20,7 +20,7 @@ public class AcademyRepository {
     public List<Academy> findAll() {
         return em.createQuery("select a from Academy a", Academy.class).getResultList();
     }
-    /*
+
 
     public List<Academy> findByName(String academyName) {
         return em.createQuery("select m from Member m join m.academy a where a.academyName = :name", Academy.class)
@@ -28,5 +28,5 @@ public class AcademyRepository {
                 .getResultList();
     }
 
-     */
+
 }

@@ -1,5 +1,6 @@
 package com.example.demo.relation.domain.service;
 
+import com.example.demo.relation.domain.academy.Academy;
 import com.example.demo.relation.domain.member.Member;
 import com.example.demo.relation.domain.member.MemberRepository;
 import lombok.RequiredArgsConstructor;
@@ -21,8 +22,8 @@ public class MemberService {
         memberRepository.save(member);
     }
 
-    public List<Member> findByName(String academyName){
-        return memberRepository.findByName(academyName);
-    }
+//    public List<Academy> findByName(String academyName){
+//        return memberRepository.findByName(academyName);
+//    }
 
 }
