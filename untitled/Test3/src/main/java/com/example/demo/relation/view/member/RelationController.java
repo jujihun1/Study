@@ -37,18 +37,19 @@ public class RelationController {
 
 
         List<Academy> academies = academyRepository.findByName(dto.getAcademyName());
-
+        List<Member> members = memberRepository.findById(dto.getLoginId());
         Academy academy = null;
-
+        Member member = null;
         if (!academies.isEmpty()){
             academy = academies.get(0);
+            member = members.get(0);
         } else {
             academy = new Academy(dto.getAcademyName());
-            memberService.insert(
-                    new Member(dto.getLoginId(),
-                            dto.getMemberName(),
-                            dto.getPassword(),
-                            academy));
+            member = new Member(dto.getLoginId(),
+                    dto.getMemberName(),
+                    dto.getPassword(),
+                    academy);
+            memberService.insert(member);
         }
 
 //        for (Member element: members) {

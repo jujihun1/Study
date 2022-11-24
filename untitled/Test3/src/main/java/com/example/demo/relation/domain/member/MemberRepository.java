@@ -19,5 +19,10 @@ public class MemberRepository {
 
 
 
+    public List<Member> findById(String loginId) { // select table(m) from (Entity 이름) m join (Member 필드에 academy) a where a.academyName = :name
+        return em.createQuery("select m from Member m where m.loginId = :name", Member.class)
+                .setParameter("name", loginId)
+                .getResultList();
+    }
 
 }
