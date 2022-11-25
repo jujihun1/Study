@@ -13,7 +13,7 @@ import java.util.List;
 @RequiredArgsConstructor
 @Transactional(readOnly = true)
 @Service
-public class MemberService {
+public class RelationService {
     private final MemberRepository memberRepository;
 
     @Transactional
@@ -22,6 +22,13 @@ public class MemberService {
         memberRepository.save(member);
     }
 
+    @Transactional
+    public List<Member> findByLoginId(String loginId)
+    {
+       return memberRepository.findById(loginId);
+    }
+
+//
 //    public List<Academy> findByName(String academyName){
 //        return memberRepository.findByName(academyName);
 //    }
