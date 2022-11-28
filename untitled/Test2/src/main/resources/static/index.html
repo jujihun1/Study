@@ -6,7 +6,9 @@
 </head>
 <body>
 <form action="insert" method="post" th:object="${object}">
+  <input type="text" placeholder="회원 Id" name="loginId">
   <input type="text" placeholder="회원이름" name="memberName">
+  <input type="text" placeholder="비밀번호" name="password">
   <input type="text" placeholder="상품이름" name="productName">
   <input type="text" placeholder="주소" name="orderName">
   <button type="submit">생성</button>

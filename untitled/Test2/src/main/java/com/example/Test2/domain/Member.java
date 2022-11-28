@@ -18,6 +18,12 @@ public class Member {
     @Column(name = "memberName")
     private String memberName;
 
+    @Column(name = "login_Id")
+    private String loginId;
+
+    @Column(name = "PASSWORD")
+    private String password;
+
     @JoinColumn
     @ManyToOne
     private Product product;
@@ -26,13 +32,11 @@ public class Member {
     @ManyToOne
     private AOrder aorder;
 
-    public Member(String memberName, Product product, AOrder aorder){
+    public Member(String memberName, String loginId, String password, Product product, AOrder aorder) {
         this.memberName = memberName;
+        this.loginId = loginId;
+        this.password = password;
         this.product = product;
         this.aorder = aorder;
     }
-
-
-
-
 }

@@ -15,4 +15,7 @@ public class MemberDto {
 
     private String orderName;
 
+    private String loginId;
+
+    private String password;
 }
