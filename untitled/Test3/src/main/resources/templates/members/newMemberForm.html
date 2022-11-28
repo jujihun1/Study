@@ -3,28 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+
+    <link rel="stylesheet" th:href="@{/css/login.css}" href="../css/login.css">
 </head>
 <body>
-    <p><h2>회원 가입</h2></p>
-    <p><h4>회원정보 입력</h4></p>
 
     <form action="" th:action th:object="${form}" method="post">
-        <p><label for="loginId">로그인 ID</label>
-        <input type="text" id="loginId" th:field="*{loginId}"/></p>
+        <div class="member">
 
-        <p><label for="memberName">이름</label>
-        <input type="text" id="memberName" th:field="*{memberName}"/></p>
+            <!--    로고     -->
+            <img class="logo" src="/images/signup.png">
 
-        <p><label for="password">비밀번호</label>
-            <input type="password" id="password" th:field="*{password}"/></p>
+            <div class="field">
+                <label for="loginId">로그인 ID</label>
+                <input type="text" id="loginId" th:field="*{loginId}"/>
+            </div>
 
+            <div class="field">
+                <label for="memberName">이름</label>
+                <input type="text" id="memberName" th:field="*{memberName}"/>
+            </div>
 
-        <div>
-            <label for="academyName">학원 이름</label>
-            <input type="text" id="academyName" th:field="*{academyName}"/></p>
+            <div class="field">
+                <label for="password1">비밀번호</label>
+                <input type="password" id="password1" th:field="*{password}"/>
+            </div>
+
+            <div class="field">
+                <label for="password2">비밀번호 확인</label>
+                <input type="password" id="password2" th:field="*{passwordConfirm}"/>
+            </div>
+
+            <div class="field">
+                <label for="academyName">학원 이름</label>
+                <input type="text" placeholder="학원 이름" id="academyName" th:field="*{academyName}"/>
+            </div>
+
+            <button type="submit">가입</button>
+            <button type="button" th:onclick="|location.href='@{/}'|">취소</button>
         </div>
-        <button type="submit">가입</button>
-        <button type="button" th:onclick="|location.href='@{/}'|">취소</button>
     </form>
 </body>
 </html>
