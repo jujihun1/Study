@@ -8,18 +8,21 @@ import javax.validation.constraints.NotEmpty;
 @Data
 public class MemberDto {
 
-    @NotEmpty
+    @NotEmpty(message = "필수 항목 입니다.")
     private String loginId;
 
-    @NotEmpty
+    @NotEmpty(message = "필수 항목 입니다.")
+    private String userEmail;
+
+    @NotEmpty(message = "필수 항목 입니다.")
     private String password;
 
-    @NotEmpty
+    @NotEmpty(message = "필수 항목 입니다.")
     private String passwordConfirm;
 
-    @NotEmpty
+    @NotEmpty(message = "필수 항목 입니다.")
     private String memberName;
 
-    @NotEmpty
+    @NotEmpty(message = "필수 항목 입니다.")
     private String academyName;
 }

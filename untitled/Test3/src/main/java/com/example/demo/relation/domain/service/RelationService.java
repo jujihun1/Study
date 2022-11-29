@@ -29,8 +29,8 @@ public class RelationService {
     }
 
 //
-//    public List<Academy> findByName(String academyName){
-//        return memberRepository.findByName(academyName);
+//    public List<Member> findByUserEmail(String userEmail){
+//        return memberRepository.findByUserEmail(userEmail);
 //    }
 
 }
