@@ -36,7 +36,8 @@ public class LoginController {
 
         List<Member> members = loginService.login(dto.getLoginId(), dto.getPassword());
 
-        if (members.size() == 0)
+//        if (members.size() == 0)
+        if (members.isEmpty())
             return "login/loginForm";
 
         for (Member member : members){

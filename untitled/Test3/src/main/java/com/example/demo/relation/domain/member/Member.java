@@ -10,6 +10,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.Locale;
 
 @Getter
 @NoArgsConstructor
@@ -36,4 +37,6 @@ public class Member {
         this.password = password;
         this.academy = academy;
     }
+
+
 }
