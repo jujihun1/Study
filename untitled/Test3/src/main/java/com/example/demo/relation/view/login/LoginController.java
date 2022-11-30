@@ -1,6 +1,7 @@
 package com.example.demo.relation.view.login;
 
 import com.example.demo.relation.domain.login.LoginService;
+import com.example.demo.relation.domain.member.Member;
 import com.example.demo.relation.view.login.dto.LoginDto;
 import com.example.demo.relation.view.member.dto.MemberDto;
 import lombok.RequiredArgsConstructor;
@@ -12,8 +13,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.validation.Valid;
+import java.util.List;
 
-@RequestMapping("login")
 @RequiredArgsConstructor
 @Controller
 public class LoginController {
@@ -29,8 +30,27 @@ public class LoginController {
     @PostMapping("/login")
     public String login(@Valid @ModelAttribute("form") LoginDto dto, BindingResult bindingResult){
 
-        return "login/loginForm";
-//        return loginService.login(dto.getLoginId());
+        if (bindingResult.hasErrors()) {
+            return "login/loginForm";
+        }
+
+        List<Member> members = loginService.login(dto.getLoginId(), dto.getPassword());
+
+        if (members.size() == 0)
+            return "login/loginForm";
+
+        for (Member member : members){
+
+            if (member == null) {
+                return "login/loginForm";
+            }else{
+                return "login/join";
+            }
+
+        }
+        return "redirect:/" ;
+
+
     }
 
 }

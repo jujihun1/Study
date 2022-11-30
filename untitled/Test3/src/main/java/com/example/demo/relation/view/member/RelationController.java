@@ -26,7 +26,6 @@ public class RelationController {
 
     private final AcademyRepository academyRepository;
 
-    private final MemberRepository memberRepository;
     @GetMapping("/new")
     public String insert(@ModelAttribute("form") MemberDto dto) {
         return "members/newMemberForm";

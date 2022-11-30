@@ -10,10 +10,10 @@ import javax.validation.constraints.NotEmpty;
 @Data
 public class LoginDto {
 
-    @NotEmpty
+    @NotEmpty(message = "로그인 ID는 필수입니다")
     private String loginId;
 
-    @NotEmpty
+    @NotEmpty(message = "Password를 입력하세요 ")
     private String password;
 
 
