@@ -16,16 +16,14 @@ public class MemberRepository {
     EntityManager em;
 
 
-    public void save(Member member, Product product, AOrder order){
+    public void insert(Member member, Product product, AOrder order){
         em.persist(member);
         em.persist(product);
         em.persist(order);
     }
 
-    public List<Member> findById(String loginId){
-       return em.createQuery("select m from Member m where m.loginId = :loginId", Member.class)
-                .setParameter("loginId",loginId)
-                .getResultList();
+    public List<Member> findById(){
+
     }
 
 

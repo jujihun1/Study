@@ -17,15 +17,9 @@ public class LoginService {
     private final MemberRepository memberRepository;
 
     @Transactional
-    public List<Member> login(String loginId, String password){
-        return memberRepository.findByLoginId(loginId)
-                .stream().filter(m -> m.getPassword().equals(password))
-                .collect(Collectors.toList());
-
-
+    public List<Member> login(String loginId){
+        return memberRepository.findByLoginId(loginId);
+//                .stream().filter(m -> m.getPassword().equals(password))
+//                .collect(Collectors.toList());
     }
-
-
-
-
 }

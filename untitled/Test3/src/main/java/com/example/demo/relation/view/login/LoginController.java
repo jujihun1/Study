@@ -34,18 +34,21 @@ public class LoginController {
             return "login/loginForm";
         }
 
-        List<Member> members = loginService.login(dto.getLoginId(), dto.getPassword());
+        List<Member> members = loginService.login(dto.getLoginId());
 
 //        if (members.size() == 0)
-        if (members.isEmpty())
+        if (members.isEmpty()){
+            bindingResult.reject("", "ID와 비밀번호를 확인하세요");
             return "login/loginForm";
+
+        }
 
         for (Member member : members){
 
-            if (member == null) {
-                return "login/loginForm";
-            }else{
+            if (member.getPassword().equals(dto.getPassword())) {
                 return "login/join";
+            }else{
+                return "login/loginForm";
             }
 
         }
