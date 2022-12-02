@@ -1,7 +1,8 @@
 package com.example.demo.relation.domain.member;
 
 
-// ** JPQL 에 관하여
+// ** JPQL 에 관하여 join 문
+// Service 중복 제거 id값 학원 중복 값 x
 // 람다식 에 관하여
 // ** jsbin.com
 
