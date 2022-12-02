@@ -3,14 +3,13 @@ package com.example.demo.relation.view.login;
 import com.example.demo.relation.domain.login.LoginService;
 import com.example.demo.relation.domain.member.Member;
 import com.example.demo.relation.view.login.dto.LoginDto;
-import com.example.demo.relation.view.member.dto.MemberDto;
+
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.validation.Valid;
 import java.util.List;
@@ -38,7 +37,7 @@ public class LoginController {
 
 //        if (members.size() == 0)
         if (members.isEmpty()){
-            bindingResult.reject("", "ID와 비밀번호를 확인하세요");
+            bindingResult.reject("", "존재하지 않는 사용자 입니다.");
             return "login/loginForm";
 
         }
@@ -48,6 +47,7 @@ public class LoginController {
             if (member.getPassword().equals(dto.getPassword())) {
                 return "login/join";
             }else{
+                bindingResult.reject("", "비밀번호를 다시 확인하세요");
                 return "login/loginForm";
             }
 

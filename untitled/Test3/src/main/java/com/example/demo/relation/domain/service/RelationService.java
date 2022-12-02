@@ -28,9 +28,11 @@ public class RelationService {
        return memberRepository.findById(loginId);
     }
 
-//
-//    public List<Member> findByUserEmail(String userEmail){
-//        return memberRepository.findByUserEmail(userEmail);
-//    }
+
+    @Transactional
+    public List<Member> findByAcademyName(String academyName)
+    {
+        return memberRepository.findByAcademyName(academyName);
+    }
 
 }

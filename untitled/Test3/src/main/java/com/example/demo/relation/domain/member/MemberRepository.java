@@ -6,7 +6,6 @@ import org.springframework.stereotype.Repository;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import java.util.List;
-import java.util.Optional;
 
 @Repository
 public class MemberRepository {
@@ -29,5 +28,19 @@ public class MemberRepository {
                 .setParameter("loginId", loginId)
                 .getResultList();
     }
+
+    //"select m from Member m join m.academy a where a.academyName = :name" "select m from Member m where m.academyName = :academyName"
+    public List<Member> findByAcademyName(String academyName) {
+        return em.createQuery("select m from Member m join m.academy a where a.academyName = :name", Member.class)
+                .setParameter("name", academyName)
+                .getResultList();
+    }
+
+//    public List<Academy> AcademyName(String academyName) {
+//        return em.createQuery("select m from Academy a where a.academyName = :name", Academy.class)
+//                .setParameter("name", academyName)
+//                .getResultList();
+//    }
+
 
 }
