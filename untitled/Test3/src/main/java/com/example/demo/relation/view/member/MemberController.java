@@ -41,51 +41,31 @@ public class MemberController {
         if (bindingResult.hasErrors()) {
             return "members/newMemberForm";
         }
-        List<Member> members = relationService.findByAcademyName(dto.getAcademyName());
-//        List<Address> addresses = memberRepository.adderss(dto.getAddress1());
-//            Academy academy = new Academy(dto.getAcademyName());
+        List<Academy> academies = relationService.AcademyName(dto.getAcademyName());
 
-        Member member = null;
-            if (!members.isEmpty()){
-                member = members.get(0);
+
+        // academyName 키값이 공유되는 이유
+        Academy academy = null;
+            if (!academies.isEmpty()){
+                academy = academies.get(0);
             } else {
-            Academy academy = new Academy(dto.getAcademyName());
-            Address address = new Address(dto.getAddress1(),dto.getAddress2(),dto.getZipcode());
-                relationService.insert(new Member(
-                        dto.getLoginId(),
-                        dto.getMemberName(),
-                        dto.getPassword(),
-                        academy, address));
-            }
-//            for (Academy academy : academies){
-//                if (academy.getAcademyName().equals(dto.getAcademyName())){
-//                    relationService.insert(new Member(dto.getLoginId(),
-//                            dto.getMemberName(),
-//                            dto.getPassword(),
-//                            academy));
-//                } else {
-//                    return "members/newMemberForm";
-//                }
-//            }
+            academy = new Academy(dto.getAcademyName());
 
+            }
+
+        List<Member> members = relationService.findByLoginId(dto.getLoginId());
+
+        if (!members.isEmpty()){
+            System.out.println("Error Message!");
+            return "members/newMemberForm";
+        } else {
+            Address address = new Address(dto.getAddress1(),dto.getAddress2(),dto.getZipcode());
+            relationService.insert(new Member(
+                    dto.getLoginId(),
+                    dto.getMemberName(),
+                    dto.getPassword(),
+                    academy, address));
+        }
         return "redirect:/";
     }
-
-//    Academy academy = null;
-//     if (!academies.isEmpty()){
-//        academy = academies.get(0);
-//    } else {
-//        academy = new Academy(dto.getAcademyName());
-//    }
-//
-//    List<Member> members = relationService.findByLoginId(dto.getLoginId());
-//        if (!members.isEmpty()){
-//        System.out.println("Error Message!");
-//        return "members/newMemberForm";
-//    } else {
-//        relationService.insert(new Member(dto.getLoginId(),
-//                dto.getMemberName(),
-//                dto.getPassword(),
-//                academy));
-//    }
 }

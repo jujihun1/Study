@@ -30,9 +30,9 @@ public class RelationService {
 
 
     @Transactional
-    public List<Member> findByAcademyName(String academyName)
+    public List<Academy> AcademyName(String academyName)
     {
-        return memberRepository.findByAcademyName(academyName);
+        return memberRepository.AcademyName(academyName);
     }
 
 }

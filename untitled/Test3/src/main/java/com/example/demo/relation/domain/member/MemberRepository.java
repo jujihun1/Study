@@ -30,25 +30,21 @@ public class MemberRepository {
     }
 
     //"select m from Member m join m.academy a where a.academyName = :name" "select m from Member m where m.academyName = :academyName"
-    public List<Member> findByAcademyName(String academyName) {
-        return em.createQuery("select m from Member m join m.academy a where a.academyName = :name", Member.class)
-                .setParameter("name", academyName)
-                .getResultList();
-    }
 
-//    public List<Address> adderss(String adderss) {
-//        return em.createQuery("select m from Member a where a.adderss1 = :name", Address.class)
-//                .setParameter("name", adderss)
-//                .getResultList();
-//    }
-
-
-
-//    public List<Academy> AcademyName(String academyName) {
-//        return em.createQuery("select m from Academy a where a.academyName = :name", Academy.class)
+//    public List<Member> findByAcademyName(String academyName) {
+//        return em.createQuery("select m from Member m join m.academy a where a.academyName = :name", Member.class)
 //                .setParameter("name", academyName)
 //                .getResultList();
 //    }
+
+
+
+
+    public List<Academy> AcademyName(String academyName) {
+        return em.createQuery("select a from Academy a where a.academyName = :name", Academy.class)
+                .setParameter("name", academyName)
+                .getResultList();
+    }
 
 
 }
