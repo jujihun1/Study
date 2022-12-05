@@ -35,4 +35,9 @@ public class RelationService {
         return memberRepository.AcademyName(academyName);
     }
 
+    @Transactional
+    public  List<Member> findByUserEmail(String userEmail){
+        return memberRepository.findByUserEmail(userEmail);
+    }
+
 }

@@ -38,13 +38,16 @@ public class MemberRepository {
 //    }
 
 
-
-
     public List<Academy> AcademyName(String academyName) {
         return em.createQuery("select a from Academy a where a.academyName = :name", Academy.class)
                 .setParameter("name", academyName)
                 .getResultList();
     }
 
+    public List<Member> findByUserEmail(String userEmail){
+        return em.createQuery("select m from Member m where m.userEmail = :userEmail",Member.class)
+                .setParameter("userEmail",userEmail)
+                .getResultList();
+    }
 
 }
