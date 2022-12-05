@@ -16,6 +16,8 @@ import java.util.Locale;
 @Getter
 @NoArgsConstructor
 @Entity
+@SecondaryTables({
+        @SecondaryTable(name = "member_address",pkJoinColumns = @PrimaryKeyJoinColumn(name = "id"))})
 public class Member {
 
     @Id @GeneratedValue
@@ -28,16 +30,24 @@ public class Member {
 
     @Column(name = "password")
     private String password;
+
+    @AttributeOverrides({// Address 클래스 의 변수명    table 이름 member_address Column 이름 address1
+            @AttributeOverride(name = "address1",column = @Column(table = "member_address",name = "address1")),
+            @AttributeOverride(name = "address2",column = @Column(table = "member_address",name = "address2")),
+            @AttributeOverride(name = "zipcode",column = @Column(table = "member_address",name = "zipcode"))})
+    private Address address;
+
     @JoinColumn(name = "academy_id")
     @ManyToOne(cascade = CascadeType.PERSIST)
     private Academy academy;
 
-    public Member(String loginId, String memberName, String password, Academy academy) {
+    public Member(String loginId, String memberName, String password,Academy academy, Address address) {
         this.loginId = loginId;
         this.memberName = memberName;
         this.password = password;
         this.academy = academy;
+        this.address = address;
+
+
     }
-
-
 }

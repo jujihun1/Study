@@ -36,6 +36,14 @@ public class MemberRepository {
                 .getResultList();
     }
 
+//    public List<Address> adderss(String adderss) {
+//        return em.createQuery("select m from Member a where a.adderss1 = :name", Address.class)
+//                .setParameter("name", adderss)
+//                .getResultList();
+//    }
+
+
+
 //    public List<Academy> AcademyName(String academyName) {
 //        return em.createQuery("select m from Academy a where a.academyName = :name", Academy.class)
 //                .setParameter("name", academyName)

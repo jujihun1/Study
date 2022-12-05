@@ -2,7 +2,9 @@ package com.example.demo.relation.view.member;
 
 import com.example.demo.relation.domain.academy.Academy;
 import com.example.demo.relation.domain.academy.AcademyRepository;
+import com.example.demo.relation.domain.member.Address;
 import com.example.demo.relation.domain.member.Member;
+import com.example.demo.relation.domain.member.MemberRepository;
 import com.example.demo.relation.domain.service.RelationService;
 import com.example.demo.relation.view.member.dto.MemberDto;
 import lombok.RequiredArgsConstructor;
@@ -24,6 +26,7 @@ public class MemberController {
 
     private final AcademyRepository academyRepository;
 
+    private  final MemberRepository memberRepository;
     @GetMapping("/new")
     public String insert(@ModelAttribute("form") MemberDto dto) {
         return "members/newMemberForm";
@@ -39,6 +42,7 @@ public class MemberController {
             return "members/newMemberForm";
         }
         List<Member> members = relationService.findByAcademyName(dto.getAcademyName());
+//        List<Address> addresses = memberRepository.adderss(dto.getAddress1());
 //            Academy academy = new Academy(dto.getAcademyName());
 
         Member member = null;
@@ -46,10 +50,12 @@ public class MemberController {
                 member = members.get(0);
             } else {
             Academy academy = new Academy(dto.getAcademyName());
-                relationService.insert(new Member(dto.getLoginId(),
-                            dto.getMemberName(),
-                            dto.getPassword(),
-                            academy));
+            Address address = new Address(dto.getAddress1(),dto.getAddress2(),dto.getZipcode());
+                relationService.insert(new Member(
+                        dto.getLoginId(),
+                        dto.getMemberName(),
+                        dto.getPassword(),
+                        academy, address));
             }
 //            for (Academy academy : academies){
 //                if (academy.getAcademyName().equals(dto.getAcademyName())){

@@ -44,6 +44,10 @@ public class LoginController {
 
         for (Member member : members){
 
+            member.getAddress().getAddress1();
+            member.getAddress().getAddress2();
+            member.getAddress().getZipcode();
+
             if (member.getPassword().equals(dto.getPassword())) {
                 return "login/join";
             }else{
