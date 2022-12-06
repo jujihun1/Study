@@ -56,7 +56,7 @@ public class MemberController {
         List<Member> members = relationService.findByLoginId(dto.getLoginId());
 
         if (!members.isEmpty()){
-            System.out.println("Error Message!");
+            System.out.println("Error Message!Id");
             return "members/newMemberForm";
         } else {
             address = new Address(dto.getAddress1(),dto.getAddress2(),dto.getZipcode());
@@ -66,15 +66,16 @@ public class MemberController {
         List<Member> membersEmail = relationService.findByUserEmail(dto.getUserEmail());
 
         if (!membersEmail.isEmpty()){
-            System.out.println("Error Message!");
+            System.out.println("Error Message!Email");
             return "members/newMemberForm";
         } else {
-            relationService.insert(new Member(
-                    dto.getLoginId(),
-                    dto.getMemberName(),
-                    dto.getPassword(),
-                    dto.getUserEmail(),
-                    academy, address));
+            relationService.insert(
+                    new Member(
+                            dto.getLoginId(),
+                            dto.getMemberName(),
+                            dto.getPassword(),
+                            dto.getUserEmail(),
+                            academy, address));
         }
         return "redirect:/";
     }

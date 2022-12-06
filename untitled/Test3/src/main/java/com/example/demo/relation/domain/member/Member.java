@@ -51,7 +51,5 @@ public class Member {
         this.userEmail = userEmail;
         this.academy = academy;
         this.address = address;
-
-
     }
 }
