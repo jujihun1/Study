@@ -67,6 +67,18 @@
             </div>
 
             <div class="field">
+                <label for="country">나라</label>
+                <input type="text" placeholder="나라" id="country" th:field="*{country}"/>
+                <div class="field-error" th:errors="*{country}"/>
+            </div>
+
+            <div class="field">
+                <label for="city">지역</label>
+                <input type="text" placeholder="지역" id="city" th:field="*{city}"/>
+                <div class="field-error" th:errors="*{city}"/>
+            </div>
+
+            <div class="field">
                 <label for="address1">주소1</label>
                 <input type="text" placeholder="주소1" id="address1" th:field="*{address1}"/>
                 <div class="field-error" th:errors="*{address1}"/>
@@ -80,7 +92,7 @@
 
             <div class="field">
                 <label for="zipcode">주소2</label>
-                <input type="text" placeholder="주소2" id="zipcode" th:field="*{zipcode}"/>
+                <input type="text" placeholder="우편번호" id="zipcode" th:field="*{zipcode}"/>
                 <div class="field-error" th:errors="*{zipcode}"/>
             </div>
 

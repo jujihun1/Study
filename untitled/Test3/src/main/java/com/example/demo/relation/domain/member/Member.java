@@ -35,6 +35,8 @@ public class Member {
     private String password;
 
     @AttributeOverrides({// Address 클래스 의 변수명    table 이름 member_address Column 이름 address1
+            @AttributeOverride(name = "country",column = @Column(table = "member_address",name = "country")),
+            @AttributeOverride(name = "city",column = @Column(table = "member_address",name = "city")),
             @AttributeOverride(name = "address1",column = @Column(table = "member_address",name = "address1")),
             @AttributeOverride(name = "address2",column = @Column(table = "member_address",name = "address2")),
             @AttributeOverride(name = "zipcode",column = @Column(table = "member_address",name = "zipcode"))})

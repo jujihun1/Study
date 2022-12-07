@@ -42,7 +42,12 @@ public class MemberController {
             return "members/newMemberForm";
         }
         List<Academy> academies = relationService.AcademyName(dto.getAcademyName());
-        Address address = new Address(dto.getAddress1(),dto.getAddress2(),dto.getZipcode());
+        Address address = new Address(
+                dto.getCountry(),
+                dto.getCity(),
+                dto.getAddress1(),
+                dto.getAddress2(),
+                dto.getZipcode());
 
         // academyName 키값이 공유되는 이유
         Academy academy = null;
@@ -50,7 +55,6 @@ public class MemberController {
                 academy = academies.get(0);
             } else {
             academy = new Academy(dto.getAcademyName());
-
             }
 
         List<Member> members = relationService.findByLoginId(dto.getLoginId());
@@ -59,8 +63,12 @@ public class MemberController {
             System.out.println("Error Message!Id");
             return "members/newMemberForm";
         } else {
-            address = new Address(dto.getAddress1(),dto.getAddress2(),dto.getZipcode());
-
+            address = new Address(
+                    dto.getCountry(),
+                    dto.getCity(),
+                    dto.getAddress1(),
+                    dto.getAddress2(),
+                    dto.getZipcode());
         }
 
         List<Member> membersEmail = relationService.findByUserEmail(dto.getUserEmail());
